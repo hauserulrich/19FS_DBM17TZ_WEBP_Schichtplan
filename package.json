@@ -1,7 +1,7 @@
 {
-  "name": "Mitgliederverwaltung",
+  "name": "Schichtplan",
   "version": "1.0.0",
-  "description": "project to manage memebers of a sports club",
+  "description": "project to manage time sharing for workers and workplaces",
   "main": "index.js",
   "dependencies": {
     "jsdoc": "^3.5.5"
@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hauserulrich/19FS_DBM17TZ_WEBP_Mitglieder"
+    "url": "git+https://github.com/hauserulrich/19FS_DBM17TZ_WEBP_Schichtplan"
   },
   "keywords": [
     "travis",
@@ -41,7 +41,7 @@
   "author": "Ulrich Hauser-Ehninger",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hauserulrich/19FS_DBM17TZ_WEBP_Mitglieder/issues"
+    "url": "https://github.com/hauserulrich/19FS_DBM17TZ_WEBP_Schichtplan/issues"
   },
-  "homepage": "https://github.com/hauserulrich/19FS_DBM17TZ_WEBP_Mitglieder#readme"
+  "homepage": "https://github.com/hauserulrich/19FS_DBM17TZ_WEBP_Schichtplan#readme"
 }
