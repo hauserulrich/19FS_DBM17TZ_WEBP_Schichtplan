@@ -19,7 +19,7 @@ $(document).ready(function() {
 
 		$.ajax({
 			type 		: 'POST',
-			url 		: 'functions/get_employees.php',
+			url 		: 'db/get_employees.php',
 			dataType 	: 'json',
 			success 	: function(data) {
 				$.each(data, function( index, value ) {
@@ -35,7 +35,7 @@ $(document).ready(function() {
 
 		$.ajax({
 			type 		: 'POST',
-			url 		: 'functions/get_workplaces.php',
+			url 		: 'db/get_workplaces.php',
 			dataType 	: 'json',
 			success 	: function(data) {
 				$.each(data, function( index, value ) {
@@ -51,7 +51,7 @@ $(document).ready(function() {
 
 		$.ajax({
 			type 		: 'POST',
-			url 		: 'functions/get_shift.php',
+			url 		: 'db/get_shift.php',
 			dataType 	: 'json',
 			success 	: function(data) {
 				console.log(data);
@@ -96,7 +96,7 @@ $(document).ready(function() {
 
     		$.ajax({ 
 		  		type 		: 'POST', 
-		   		url 		: 'functions/create_shift.php', 
+		   		url 		: 'db/create_shift.php', 
 		    	data 		: {name: selected_employee, workplace: selected_workplace, date: date, time_from: time_from, time_until: time_to},
 		    	dataType 	: 'json',
 		    	success 	: function(data) {
@@ -129,7 +129,7 @@ $(document).ready(function() {
 
   			$.ajax({ 
 		    	type 		: 'POST', 
-			    url 		: 'functions/delete_shift.php', 
+			    url 		: 'db/delete_shift.php', 
 		    	data 		: {id_sp: shift_id},
 		    	dataType 	: 'json',
 		    	success 	: function(data) {
@@ -170,7 +170,7 @@ $(document).ready(function() {
 
 	  			$.ajax({ 
 			    	type 		: 'POST', 
-			    	url 		: 'functions/update_shift.php', 
+			    	url 		: 'db/update_shift.php', 
 		    		data 		: {id_sp: shift_id, name: selected_employee, workplace: selected_workplace, date: date, time_from: time_from, time_until: time_to},
 		    		dataType 	: 'json',
 		    		success 	: function(data) {
@@ -208,7 +208,7 @@ $(document).ready(function() {
 		
     		$.ajax({ 
 		    	type 		: 'POST', 
-			    url 		: 'functions/create_employee.php', 
+			    url 		: 'db/create_employee.php', 
 			    data 		: ({name: create_employee}),
 			    dataType 	: 'json',
 			    success 	: function(data) {
@@ -242,7 +242,7 @@ $(document).ready(function() {
 		
     		$.ajax({ 
 		    	type 		: 'POST', 
-		    	url 		: 'functions/create_workplace.php', 
+		    	url 		: 'db/create_workplace.php', 
 		    	data 		: ({workplace: create_workplace}),
 		   		dataType 	: 'json',
 		    	success 	: function(data) {
@@ -274,7 +274,7 @@ $(document).ready(function() {
     	
     		$.ajax({ 
 		    	type 		: 'POST', 
-		    	url 		: 'functions/delete_employee.php', 
+		    	url 		: 'db/delete_employee.php', 
 		    	data 		: ({name: selected_employee}),
 		    	dataType 	: 'json',
 		    	success 	: function(data) {
@@ -306,7 +306,7 @@ $(document).ready(function() {
 
     		$.ajax({ 
 		   		type 		: 'POST', 
-		    	url 		: 'functions/delete_workplace.php', 
+		    	url 		: 'db/delete_workplace.php', 
 		    	data 		: ({workplace: selected_workplace}),
 		    	dataType 	: 'json',
 		    	success 	: function(data) {
