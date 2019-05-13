@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>my shift plan</title>
+		<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="style/mystyle.css">
+		<link rel="stylesheet" type="text/css" href="style/mystyle_tooltip.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+		<script src="app.js"></script>
+	</head>
+
+	<body>
+	<div id="main">
+		<div id="left">
+			<h1> create employees & workplaces </h1>
+			<div id="table-like">
+				<div class="row">
+					<div class="cell"><label for="txb_employee_name">Employee: </label></div>
+					<div class="cell"><input type="text" name="txb_employee_name" id="txb_employee_name" /></div>
+					<div class="cell"><input id="btn_create_employee" class="add" type="submit" value=" + " /></div>
+					<div class="cell"><label for="slc_employees_create_employees">Employees: </label></div>
+					<div class="cell"><select class="slc_employees" id='slc_employees_create_employees'></select></div>
+					<div class="cell"><input id="btn_delete_employee" class="del" type="submit" value=" - " /></div>
+				</div>
+				<div class="row">
+					<div class="cell"><label for="txb_workplace_name">Workplace: </label></div>
+					<div class="cell"><input type="text" name="txb_workplace_name" id="txb_workplace_name" /></div>
+					<div class="cell"><input id="btn_create_workplace" class="add" type="submit" value=" + " /></div>
+					<div class="cell"><label for="slc_workplaces">Workplaces: </label></div>
+					<div class="cell"><select class="slc_workplaces" id='slc_workplaces_create_workplaces'></select></div>
+					<div class="cell"><input id="btn_delete_workplace" class="del" type="submit" value=" - " /></div>
+				</div>
+			</div>
+			<h1> success & error messages </h1>
+			<p id='msg_success' style='background-color: #e7e7e7'>success ...</p>
+			<p id='msg_error' style='background-color: #e7e7e7'>... and error messages</p>
+		</div>	
+		<div id="right">
+			<h1> create shift plan </h1>
+
+			<div id="table-like">
+				<div class="row">
+					<div class="cell"><label for="slc_employees">Employees: </label></div>
+					<div class="cell"><select class="slc_employees" id="slc_employees_create_shift" name="slc_employees"></select></div>
+					<div class="cell"><label for="dat_create_shift">Date:</label></div>
+					<div class="cell"><input type="date" id="dat_create_shift" value="2019-05-15" /></div>		
+				</div>
+				<div class="row">
+					<div class="cell"><label for="slc_workplaces">Workplaces: </label></div>
+					<div class="cell"><select class="slc_workplaces" id="slc_workplaces_create_shift" name="slc_workplaces"></select></div>
+					<div class="cell"><label for="tme_from_creat_shift">Time from:</label></div>
+					<div class="cell"><input type="time" id="tme_from_creat_shift" step="1" value="08:00:00" /></div>
+				</div>
+				<div class="row">
+					<div class="cell"></div>
+					<div class="cell"></div>
+					<div class="cell"><label for="tme_to_creat_shift">Time to:</label></div>
+					<div class="cell"><input type="time" id="tme_to_creat_shift" step="1" value="17:00:00" /></div>
+				</div>
+				<div class="row">
+					<div class="cell">Functions:</div>
+					<div class="cell tooltip"><input id="btn_change_shift" class="chg" type="submit" value="change shift" />
+						<span class="tooltiptext">select a shift, adjust the parameters and press the change button</span>
+					</div>
+					<div class="cell tooltip"><input id="btn_delete_shift" class="del2" type="submit" value="delete shift" />
+						<span class="tooltiptext">select a shift in the table below, then press the delete button</span>
+					</div>
+					<div class="cell"><input id="btn_create_shift" class="cre" type="submit" value="create shift" /></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="bottom">
+		<br><hr>
+		<table id='table_shift' style="width:100%">
+			<thead>
+				<tr>
+    				<th>Employee</th>
+    				<th>Workplace</th> 
+    				<th>Date</th>
+    				<th>From</th>
+    				<th>To</th>		
+  				</tr>
+  			</thead>
+  			<tbody>
+  			</tbody>
+		</table>
+	</div>
+	<div id="footer">
+	<hr>
+		shift plan build #20190504 | student project at the <a href=https://www.htwchur.ch/>htw chur</a> #dbm17_tz | source code available on <a href=https://github.com/hauserulrich/19FS_DBM17TZ_WEBP_Schichtplan>github</a>
+	</body>
+</html>
