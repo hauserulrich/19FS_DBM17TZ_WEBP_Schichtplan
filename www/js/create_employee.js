@@ -29,7 +29,7 @@ $(document).ready(function() {
 		    			$('#msg_success').html(data.posted);
 		    			$('#msg_success').css("background-color", "#4CAF50");
 		    		}
-				}
+				} 
 			});
         } else {
     		$('#msg_error').html('error: employee name must consist of at least 3 characters');
