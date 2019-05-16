@@ -1,4 +1,4 @@
-function current_date() {
+window.onload = function current_date() {
 		
 	var myDate = new Date();
 
