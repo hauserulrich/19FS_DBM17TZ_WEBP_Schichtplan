@@ -14,7 +14,7 @@ $(document).ready(function() {
   		var time_to = $('#tme_to_creat_shift').val();
   		var date = $('#dat_create_shift').val();
 
-  		if (selected_employee.length > 0 && selected_workplace.length > 0 && Date.parse(date) && time_to > time_from) {
+  		if (selected_employee.length > 0 && selected_workplace.length > 0 && Date.parse(date) && time_to.time > time_from.time) {
 
 	    	$.ajax({ 
 			  	type 		: 'POST', 
@@ -36,7 +36,7 @@ $(document).ready(function() {
 			});
 			get_shift();
 		} else {
-	    	$('#msg_error').html('error: empty data posted');
+	    	$('#msg_error').html('error: empty data posted or invalid time slot');
 			$('#msg_error').css("background-color", "#f44336"); 
     	}		
 	});
