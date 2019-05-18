@@ -14,7 +14,7 @@ $(document).ready(function() {
   		var time_to = $('#tme_to_creat_shift').val();
   		var date = $('#dat_create_shift').val();
 
-  		if (selected_employee.length > 0 && selected_workplace.length > 0 && Date.parse(date)) {
+  		if (selected_employee.length > 0 && selected_workplace.length > 0 && Date.parse(date) && time_to > time_from) {
 
 	    	$.ajax({ 
 			  	type 		: 'POST', 
