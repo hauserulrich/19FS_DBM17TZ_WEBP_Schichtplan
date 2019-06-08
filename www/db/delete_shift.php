@@ -1,34 +1,26 @@
 <?php
 
+    //include mysqli connection parameters
     include 'connection.php';
 
+    //define variables
 	$errors = array();
     $ok = array();
     $form_data = array(); 
 
-    //$name = $_POST['name'];
-    //$workplace = $_POST['workplace'];
-    //$date = $_POST['date'];
-    //$time_from = $_POST['time_from'];
-    //$time_until = $_POST['time_until'];
-
-    //$sql = "DELETE FROM schicht 
-    //        WHERE schicht.id_ma IN (SELECT mitarbeiter.id_ma from mitarbeiter where mitarbeiter.name = '$name')
-    //        AND schicht.id_ap IN (SELECT arbeitsplatz.id_ap FROM arbeitsplatz where arbeitsplatz.beschreibung = '$workplace')
-    //        AND schicht.datum = '$date'
-    //        AND schicht.zeitvon = '$time_from'
-    //      AND schicht.zeitbis = '$time_until'";
-
+    //get POST parameters from ajax
     $id_sp = $_POST['id_sp'];
 
+    //prepare sql statement
     $sql = "DELETE FROM schicht WHERE schicht.id_sp = '$id_sp'";
 
+    //execute sql statement and catch errors
     if ($connection->query($sql) === TRUE) {
-        //$ok =  "successfully deleted shift: " . $name . " | " . $workplace . " | " . $date . " | " . $time_from  . " | " . $time_until; }
         $ok =  "successfully deleted shift"; }
     else {
         $errors = "error: " . $sql . " --> " . $connection->error; }
     
+    //write success or error messages to array for send back to ajax
     if (!empty($errors)) { 
     	$form_data['success'] = false;
     	$form_data['errors']  = $errors;
@@ -37,6 +29,7 @@
     	$form_data['posted'] = $ok;
     }
 
+    //send back array in json format
     echo json_encode($form_data);
     
 ?>	
