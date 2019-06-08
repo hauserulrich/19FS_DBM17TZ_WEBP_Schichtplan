@@ -1,6 +1,6 @@
 function get_shift() {
     	
-    $('#table_shift tbody').empty();
+    $('#table_shift tbody').empty(); //clear table body
 
 	$.ajax({
 		type 		: 'POST',
@@ -8,7 +8,7 @@ function get_shift() {
 		dataType 	: 'json',
 		success 	: function(data) {
 			console.log(data);
-			$.each(data, function( index, value ) {
+			$.each(data, function( index, value ) { //create table with variables from db
 				$('#table_shift > tbody:last-child').append('<tr id="'+value.id_sp+'"><td class="td_nam">'+value.name+'</td><td class="td_des">'+value.beschreibung+'</td><td class="td_dat">'+value.datum+'</td><td class="td_ti1">'+value.zeitvon+'</td><td class="td_ti2">'+value.zeitbis+'</td></tr>')
 				$('#table_shift td').css("border-bottom", '1px solid #e7e7e7');
 			});
