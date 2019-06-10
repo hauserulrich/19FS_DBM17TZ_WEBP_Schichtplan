@@ -1,13 +1,6 @@
-$(document).ready(function() {
 
-	//prevent form default submit
-	$('form').submit(function() {  
-		event.preventDefault();
-	});
-	 
-	//when click button call function
-	$( "#btn_create_shift" ).click(function() {
-		
+function create_shift() {
+
 		empty_messages(); // clear the message section
 
 		//read variables
@@ -18,30 +11,31 @@ $(document).ready(function() {
   		var date = $('#dat_create_shift').val();
 
   		// if variables not empty
-  		if (selected_employee.length > 0 && selected_workplace.length > 0 && Date.parse(date) && time_to.time > time_from.time) {
+  		if (selected_employee.length > 0 && selected_workplace.length > 0 && Date.parse(date)) {
 
-	    	$.ajax({ 
-			  	type 		: 'POST', 
-			   	url 		: 'db/create_shift.php', 
+
+	    	$.ajax({
+			  	type 		: 'POST',
+			   	url 		: 'db/create_shift.php',
 		    	data 		: {name: selected_employee, workplace: selected_workplace, date: date, time_from: time_from, time_until: time_to},
 		    	dataType 	: 'json',
 		    	success 	: function(data) {
-			    	if (!data.success) { 
+			    	if (!data.success) {
 			    		if (data.errors) { // if error then post error message to message section
 		    				$('#msg_error').html(data.errors);
-		    				$('#msg_error').css("background-color", "#f44336"); 
+		    				$('#msg_error').css("background-color", "#f44336");
 		    			}
 		   			}
 		   			else { // if error then post error message to message section
 			    		$('#msg_success').html(data.posted);
 		    			$('#msg_success').css("background-color", "#4CAF50");
 		    		}
+					}
+					});
+				get_shift(); // refresh shift table
 				}
-			});
-			get_shift(); // refresh shift table
-		} else {
+		else {
 	    	$('#msg_error').html('error: empty data posted or invalid time slot'); //post error message if variables not valid
-			$('#msg_error').css("background-color", "#f44336"); 
-    	}		
-	});
-});
+			$('#msg_error').css("background-color", "#f44336");
+    	}
+}

@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<title>my shift plan</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 		<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="style/mystyle.css">
 		<link rel="stylesheet" type="text/css" href="style/mystyle_tooltip.css">
@@ -20,6 +20,7 @@
 		<script src="js/delete_shift.js"></script>
 		<script src="js/change_shift.js"></script>
 		<script src="js/current_date.js"></script>
+		<script src="js/check_shift.js"></script>
 	</head>
 
 	<body>
@@ -47,7 +48,7 @@
 			<h1> success & error messages </h1>
 			<p id='msg_success' style='background-color: #e7e7e7'>success ...</p>
 			<p id='msg_error' style='background-color: #e7e7e7'>... and error messages</p>
-		</div>	
+		</div>
 		<div id="right">
 			<h1> create shift plan </h1>
 
@@ -56,7 +57,7 @@
 					<div class="cell"><label for="slc_employees">Employees: </label></div>
 					<div class="cell"><select class="slc_employees" id="slc_employees_create_shift" name="slc_employees"></select></div>
 					<div class="cell"><label for="dat_create_shift">Date:</label></div>
-					<div class="cell"><input type="date" id="dat_create_shift"> </div>		
+					<div class="cell"><input type="date" id="dat_create_shift"> </div>
 				</div>
 				<div class="row">
 					<div class="cell"><label for="slc_workplaces">Workplaces: </label></div>
@@ -89,10 +90,10 @@
 			<thead>
 				<tr>
     				<th>Employee</th>
-    				<th>Workplace</th> 
+    				<th>Workplace</th>
     				<th>Date</th>
     				<th>From</th>
-    				<th>To</th>		
+    				<th>To</th>
   				</tr>
   			</thead>
   			<tbody>
