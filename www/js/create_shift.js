@@ -7,7 +7,12 @@ function create_shift() {
 		var selected_employee = $('#slc_employees_create_shift option:selected').text();
 		var selected_workplace = $('#slc_workplaces_create_shift option:selected').text();
   		var time_from = $('#tme_from_creat_shift').val();
+			/*var time_from = new Date(); define variable time_from
+			time_from.toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'}); display only hh:mm */
   		var time_to = $('#tme_to_creat_shift').val();
+			/* var time_to = new Date(); define variable time_to
+			time_to.toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'}); display only hh:mm
+			both time_from and time_to adjustements for displaying the time without seconds were both disabled because of they both don't work, also after 20 h of reasearch */
   		var date = $('#dat_create_shift').val();
 
   		// if variables not empty
