@@ -12,7 +12,7 @@ function create_shift() {
   		var time_to = $('#tme_to_creat_shift').val();
 			/* var time_to = new Date(); define variable time_to
 			time_to.toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'}); display only hh:mm
-			both time_from and time_to adjustements for displaying the time without seconds were both disabled because of they both don't work, also after 20 h of reasearch */
+			both time_from and time_to adjustements for displaying the time without seconds were both disabled because they both don't work */
   		var date = $('#dat_create_shift').val();
 
   		// if variables not empty
