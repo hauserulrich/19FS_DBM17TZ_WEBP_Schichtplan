@@ -8,7 +8,7 @@ function get_workplaces() {
 		dataType 	: 'json',
 		success 	: function(data) {
 			$.each(data, function( index, value ) {
-				$('.slc_workplaces').append('"<option value="' + value.beschreibung + '">' + value.beschreibung + '</option>'); //create dropdown menue with variables from db
+				$('.slc_workplaces').append('"<option value="' + value.beschreibung + '">' + value.beschreibung + '</option>'); //create dropdown menue with variables from database
 			});
        	}  
     });
